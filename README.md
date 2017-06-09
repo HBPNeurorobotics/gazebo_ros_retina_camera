@@ -54,8 +54,8 @@ The only required element for the plugin to work is `retinaScriptPath`.
 
 ## Please Note
 
-- When used in the **NeuroRobotics Platform**, the `retinaScriptPath` element is **overridden** by the configuration tag in the BIBI;
-it is recommended to comment the element out.</br> e.g. `<!--retinaScriptPath>my_retina_script.py</retinaScriptPath-->`
+- When used in the **NeuroRobotics Platform**, the `retinaScriptPath` element is **overridden** by the configuration tag in the BIBI configuration file.
+Thus, it is recommended to comment the element out.</br> e.g. `<!--retinaScriptPath>my_retina_script.py</retinaScriptPath-->`
 
 - `width` and `height` values must match the ones in the retina config script.
 
