@@ -21,6 +21,12 @@ catkin_package(
 ## Build ##
 ###########
 
+# Check if Retina framework is installed, else don't build
+IF(NOT EXISTS "$ENV{RETINA_INSTALL_DIR}")
+    message(WARNING "Retina framework is NOT INSTALLED: Could not find RETINA_INSTALL_DIR environment variable. SKIPPING")
+    return()
+ENDIF()
+
 SET(RETINA_INCLUDE_DIR $ENV{RETINA_INSTALL_DIR}/include)
 SET(CIMG_INCLUDE_DIR $ENV{RETINA_INSTALL_DIR}/CImg-1.6.0_rolling141127)
 SET(PYTHON_INCLUDE_DIR /usr/include/python2.7/)
