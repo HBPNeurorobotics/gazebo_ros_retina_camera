@@ -4,7 +4,7 @@ A Gazebo ROS Plugin for the Retina Framework.
 # Gazebo ROS Retina Plugin
 
 This package provides a Gazebo ROS Camera interface to the Retina framework implemented at the University of Granada
- by Pablo Martínez-Cañada et al. [[1]](#refs)[[2]](#refs) has been integrated in the NRP [[3]](#refs).
+ by Pablo Martínez-Cañada et al. [[1]](#references)[[2]](#references) has been integrated in the NRP [[3]](#references).
 
 
 ## Install
@@ -52,15 +52,15 @@ the output is published on two topics:
 
 The only required element for the plugin to work is `retinaScriptPath`.
 
-# Please Note
+## Please Note
 
 When used in the NeuroRobotics Platform, the `retinaScriptPath` element is overridden by the configuration tag in the BIBI;
 it is recommended to comment the element out. e.g. `<!--retinaScriptPath>my_retina_script.py</retinaScriptPath-->`
 
 `width` and `height` values must match the ones in the retina config script.
 
+## References
 
-# References (#refs)
-[1] Martínez-Cañada, P., Morillas, C., Pino, B., Ros, E., Pelayo, F. A Computational Framework for Realistic Retina Modeling. In International Journal of Neural Systems. Accepted for publication
-[2] [COREM](https://github.com/pablomc88/COREM)
+[1] Martínez-Cañada, P., Morillas, C., Pino, B., Ros, E., Pelayo, F. A Computational Framework for Realistic Retina Modeling. In International Journal of Neural Systems. Accepted for publication.</br>
+[2] [COREM](https://github.com/pablomc88/COREM)</br>
 [3] [retina](https://bbpcode.epfl.ch/code/#/admin/projects/neurorobotics/retina)
