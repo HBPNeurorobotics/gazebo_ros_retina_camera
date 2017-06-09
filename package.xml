@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>gazebo_ros_retina_camera</name>
+  <version>0.0.0</version>
+  <description>The gazebo_ros_retina_camera package</description>
+  <maintainer email="u.albanese@santannapisa.it">Ugo Albanese</maintainer>
+
+  <license>GNU GPL</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>gazebo_plugins</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>roscpp</run_depend>
+
+  <run_depend>retina</run_depend>
+
+  <export>
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
+  </export>
+</package>
