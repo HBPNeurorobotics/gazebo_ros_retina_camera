@@ -164,7 +164,7 @@ namespace gazebo
 
     this->sensor_update_time_ = this->parentSensor_->LastUpdateTime();
 
-    common::Time cur_time = this->world_->GetSimTime();
+    common::Time cur_time = this->world_->SimTime();
     if (cur_time - this->sensor_update_time_ >= this->update_period_)
     {
         //----------publish input image on the camera topic----------
