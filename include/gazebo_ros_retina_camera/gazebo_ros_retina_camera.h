@@ -43,7 +43,7 @@
 
 #include <gazebo_plugins/gazebo_ros_camera_utils.h>
 
-#include <COREM/core/retina.h>
+#include <corem/retina.h>
 
 #include <CImg.h>
 using namespace cimg_library;

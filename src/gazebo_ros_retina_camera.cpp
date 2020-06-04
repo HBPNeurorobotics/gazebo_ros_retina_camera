@@ -102,8 +102,9 @@ namespace gazebo
     GazeboRosCameraUtils::Load(_parent, _sdf);
 
     //----retina init----
-    _retina.setColumns(this->width);
-    _retina.setRows(this->height);
+    retina_config_t *retina_config = _retina.getConfig();
+    retina_config->columns = this->width;
+    retina_config->rows = this->height;
 
     //read script path from sdf element
     std::string retinaPath;
@@ -129,10 +130,10 @@ namespace gazebo
 
     for(Module* m :_retina.modules) {
 
-        std::string currModuleID = m->getID();
+        std::string currModuleID = m->id();
 
         if (!currModuleID.empty()) {
-            //std::cout << "MODULE: "<< m->getID() << std::endl;
+            //std::cout << "MODULE: "<< m->id() << std::endl;
 
             _retinaModuleIDList.push_back(currModuleID);
             //create publishers for each module (defined in the retina script)
@@ -178,7 +179,7 @@ namespace gazebo
         convertRGBtoCImg(_image, this->_input_retina_image);
 
         //----------update retina with the new image----------
-        _retina.update(this->_input_retina_image);
+        _retina.step(this->_input_retina_image);
 
         //----------Publish retina layers IF the topics are subscribed----------
         for(auto const &entry : _ID2PubsMap) { //(ID, (dataPub, imagePub))
@@ -194,7 +195,7 @@ namespace gazebo
 
         if(isDataTopicSubscribed) { //publish data first, since in this case the retina_output is not modified
            //read retina-processed image for the current layer---------
-           CImg<double>* pRetina_output = _retina.getOutput(currModule_ID);
+           const CImg<double>* pRetina_output = _retina.getOutput(currModule_ID);
 
            publishCImgAsData(*pRetina_output, currDataPublisher);
         }
